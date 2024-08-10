@@ -1,0 +1,2 @@
+# Ignora los archivos con extensión .class dir actual y subdirectorios
+*.class

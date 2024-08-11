@@ -9,8 +9,8 @@ public class EjecutadorDeProcesos {
 	FraccionGui gui;
 	gui = new FraccionGui();
         Fraccion fr1, fr2;
-        fr1 = gui.solicitaFraccion();
-        fr2 = gui.solicitaFraccion();
+        fr1 = gui.solicitaFraccion("A");
+        fr2 = gui.solicitaFraccion("B");
 
         CalculadoraDeFracciones calc;
         calc = new CalculadoraDeFracciones();

@@ -12,8 +12,8 @@ public class Fraccion {
 
 
     public Fraccion(Integer pNum, Integer pDen) {
-        this.numerador = pNum;
-        this.denominador = pDen;
+        this.setNumerador(pNum);
+        this.setDenominador(pDen);
     }
 
     
@@ -28,6 +28,9 @@ public class Fraccion {
 
 
     public void setDenominador(Integer pDen) {
+        if (pDen == 0) {
+           throw new FraccionException("No debe ser cero el denominador.");
+        }
         this.denominador = pDen;
     }
 

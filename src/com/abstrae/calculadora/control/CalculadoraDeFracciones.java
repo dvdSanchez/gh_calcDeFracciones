@@ -1,5 +1,7 @@
 package com.abstrae.calculadora.control;
 
+import java.util.List;
+
 import com.abstrae.calculadora.model.Fraccion;
 
 public class CalculadoraDeFracciones {
@@ -16,6 +18,16 @@ public class CalculadoraDeFracciones {
         frRes.setDenominador(denRes);
         frRes.setNumerador(numRes);
         return frRes;
+    }
+
+
+    public Fraccion sumaFracciones(List<Fraccion> pFracciones) {
+        Fraccion frResultante;
+        frResultante = new Fraccion(0,1);
+        for (Fraccion fr : pFracciones) {
+            frResultante = sumaFracciones(fr, frResultante);            
+        }
+        return frResultante;        
     }
 
 }

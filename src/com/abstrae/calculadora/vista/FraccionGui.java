@@ -66,6 +66,6 @@ public class FraccionGui {
 
     public void comunicaFraccion(Fraccion pFr){
         System.out.println("El resultado es: ");
-        System.out.println("\t" + pFr);
+        System.out.println("\t Impropia: " + pFr.toImpropia() + " Mixta: " + pFr.toMixta() );
     }
 }

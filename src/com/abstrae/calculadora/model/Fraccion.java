@@ -41,7 +41,17 @@ public class Fraccion {
 
 
     public String toString() {
+        return this.toImpropia();
+    }
+
+    public String toImpropia() {
         return numerador + "/" + denominador;
     }
 
+
+    public String toMixta() {
+        int coc = numerador / denominador; 
+        int res = numerador % denominador;
+        return coc + " " + res + "/" + denominador;
+    }
 }

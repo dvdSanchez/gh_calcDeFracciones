@@ -8,10 +8,11 @@ import com.abstrae.calculadora.vista.FraccionGui;
 public class EjecutadorDeProcesos {
 
     public void realizaSumaDeFracciones() {
-	FraccionGui gui;
-	gui = new FraccionGui();
+       FraccionGui gui;
+        gui = new FraccionGui();
+
         List<Fraccion> fracciones;
-	fracciones = gui.solicitaFracciones();
+        fracciones = gui.solicitaFracciones();
 
         CalculadoraDeFracciones calc;
         calc = new CalculadoraDeFracciones();

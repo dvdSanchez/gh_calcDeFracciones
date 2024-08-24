@@ -1,0 +1,17 @@
+name: Analisis de código con Sonarqube
+on: 
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  Analisis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+      - name: Analizando con Sonarqube
+        uses: SonarSource/sonarqube-scan-actions@v2.0.1
+        env:
+          SONAR_TOKEN: ${{ secrets.SQ_TK_PRUEBA }}
+          SONAR_HOST_URL: ${{ vars.SQ_URL_SONAR_HOST }}

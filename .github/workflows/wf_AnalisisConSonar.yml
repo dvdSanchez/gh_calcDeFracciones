@@ -4,14 +4,26 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  Analisis:
+  build:
+    name: Build and analyze
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  
-      - name: Analizando con Sonarqube
-        uses: SonarSource/sonarqube-scan-action@v2.0.1
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: Cache SonarQube packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar          
+      - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SQ_TK_PRUEBA }}
           SONAR_HOST_URL: ${{ vars.SQ_URL_SONAR_HOST }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SQ-PR_Aprender -Dsonar.projectName='SQ-PR_Aprender'

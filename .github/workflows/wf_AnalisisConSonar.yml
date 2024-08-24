@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 0  
       - name: Analizando con Sonarqube
-        uses: SonarSource/sonarqube-scan-actions@v2.0.1
+        uses: SonarSource/sonarqube-scan-action@v2.0.1
         env:
           SONAR_TOKEN: ${{ secrets.SQ_TK_PRUEBA }}
           SONAR_HOST_URL: ${{ vars.SQ_URL_SONAR_HOST }}
